@@ -1,5 +1,5 @@
 import {PUT_IMAGES, ERROR, FETCH_IMAGES} from './actions';
-const initialState = {images: [], page: 0, fetching: false};
+const initialState = {images: [], page: 1, fetching: false};
 export const mainReducer = (state = initialState, action) => {
   switch (action.type) {
     case PUT_IMAGES:
