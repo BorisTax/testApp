@@ -1,4 +1,4 @@
-import {PUT_IMAGES, ERROR, FETCH_IMAGES} from './actions';
+import {PUT_IMAGES, REQUEST_ERROR, REQUEST_SENDING} from './actions';
 const initialState = {images: [], page: 1, fetching: false};
 export const mainReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -8,9 +8,9 @@ export const mainReducer = (state = initialState, action) => {
       for(let i of action.payload.data) newState.images.push(i);
       newState.images.push({});
       return {...newState,  page: action.payload.page, fetching: false};
-    case FETCH_IMAGES:
+    case REQUEST_SENDING:
       return {...state, fetching: true};
-    case ERROR:
+    case REQUEST_ERROR:
       return {...state};
     default:
       return state;
